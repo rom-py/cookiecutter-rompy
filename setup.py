@@ -2,15 +2,15 @@
 
 from distutils.core import setup
 setup(
-    name='cookiecutter-pypackage',
+    name='cookiecutter-rompy',
     packages=[],
     version='0.1.0',
-    description='Cookiecutter template for a Python package',
-    author='Audrey M. Roy Greenfeld',
+    description='Cookiecutter template for a rompy model config',
+    author='Rompy Developers',
     license='BSD',
-    author_email='audrey@feldroy.com',
-    url='https://github.com/audreyfeldroy/cookiecutter-pypackage',
-    keywords=['cookiecutter', 'template', 'package', ],
+    author_email='developers@rompy.com',
+    url='https://github.com/rom-py/cookiecutter-rompy',
+    keywords=['cookiecutter', 'template', 'package', 'rompy', 'model', 'config'],
     python_requires='>=3.10',
     classifiers=[
         'Development Status :: 4 - Beta',
@@ -23,6 +23,7 @@ setup(
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
         'Programming Language :: Python :: 3.12',
+        'Programming Language :: Python :: 3.13',
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
         'Topic :: Software Development',
