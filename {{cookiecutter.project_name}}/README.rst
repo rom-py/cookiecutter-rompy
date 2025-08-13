@@ -33,3 +33,21 @@ Features
 --------
 
 * TODO
+
+
+
+Code Formatting and Pre-commit Hooks
+------------------------------------
+
+This repository enforces Python code formatting using [black](https://github.com/psf/black) via the pre-commit framework.
+
+To set up pre-commit hooks locally (required for all contributors)::
+
+    pip install pre-commit
+    pre-commit install
+
+This will automatically check code formatting before each commit. To format your code manually, run::
+
+    pre-commit run --all-files
+
+All code must pass black formatting before it can be committed or merged.
