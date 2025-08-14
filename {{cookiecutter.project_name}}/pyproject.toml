@@ -31,6 +31,7 @@ dev = [
     "mypy",
     "pytest",
     "ruff"
+    "black"
 ]
 {% if cookiecutter.command_line_interface != "No command-line interface" %}
 [project.scripts]
