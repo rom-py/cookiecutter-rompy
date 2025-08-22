@@ -32,6 +32,15 @@ dev = [
     "pytest",
     "ruff"
     "black"
+    "requests"
+]
+docs = [
+    "autodoc_pydantic",
+    "ipython",
+    "nbsphinx",
+    "pydata_sphinx_theme",
+    "sphinx<7.3.6",
+    "sphinx-collections",
 ]
 {% if cookiecutter.command_line_interface != "No command-line interface" %}
 [project.scripts]
