@@ -30,8 +30,7 @@ dev = [
     "coverage",
     "mypy",
     "pytest",
-    "ruff",
-    "requests"
+    "requests",
 ]
 docs = [
     "autodoc_pydantic",
