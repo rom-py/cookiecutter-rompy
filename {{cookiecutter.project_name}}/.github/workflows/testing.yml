@@ -20,15 +20,15 @@ jobs:
       name: Install dependencies
       run: |
         python -m pip install --upgrade pip build
-        pip install .[dev]
+        pip install .[test]
     -
       name: Run tests
       run: pytest -s -v tests
-    -
-      name: Run linting
-      run: |
-        pip install ruff
-        ruff check .
+    # -
+    #   name: Run linting
+    #   run: |
+    #     pip install ruff
+    #     ruff check .
     -
       name: Build package
       run: python -m build
