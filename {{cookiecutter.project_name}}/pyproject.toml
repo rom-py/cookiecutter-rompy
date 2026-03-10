@@ -35,12 +35,10 @@ dev = [
     "requests"
 ]
 docs = [
-    "autodoc_pydantic",
-    "ipython",
-    "nbsphinx",
-    "pydata_sphinx_theme",
-    "sphinx<7.3.6",
-    "sphinx-collections",
+    "mkdocs",
+    "mkdocs-material",
+    "mkdocstrings[python]",
+    "pymdown-extensions",
 ]
 {% if cookiecutter.command_line_interface != "No command-line interface" %}
 [project.scripts]
