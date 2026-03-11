@@ -3,44 +3,33 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "{{cookiecutter.project_slug}}"
-description = "{{cookiecutter.project_short_description}}"
-readme = "README.rst"
-authors = [
-  {name = "{{cookiecutter.full_name}}", email = "{{cookiecutter.email}}"}
-]
-maintainers = [
-  {name = "{{cookiecutter.full_name}}", email = "{{cookiecutter.email}}"}
-]
-classifiers = [
-
-]
-license = {text = "{{cookiecutter.open_source_license}}"}
 dependencies = [
   "rompy",
   {% if cookiecutter.command_line_interface.lower() == "typer" -%}
   "typer"
 {%- endif %}
+]name = "{{cookiecutter.project_slug}}"
+description = "{{cookiecutter.project_short_description}}"
+readme = "README.rst"
+authors = [
+    { name = "{{cookiecutter.full_name}}", email = "{{cookiecutter.email}}" },
 ]
+maintainers = [
+    { name = "{{cookiecutter.full_name}}", email = "{{cookiecutter.email}}" },
+]
+classifiers = []
+license = { text = "{{cookiecutter.open_source_license}}" }
 
 dynamic = ["version"]
 
 [project.optional-dependencies]
-dev = [
-    "coverage",
-    "mypy",
-    "pytest",
-    "requests",
-]
+dev = ["coverage", "mypy", "pytest", "ruff", "requests"]
 docs = [
-    "autodoc_pydantic",
-    "ipython",
-    "nbsphinx",
-    "pydata_sphinx_theme",
-    "sphinx<7.3.6",
-    "sphinx-collections",
+    "mkdocs",
+    "mkdocs-material",
+    "mkdocstrings[python]",
+    "pymdown-extensions",
 ]
-{% if cookiecutter.command_line_interface != "No command-line interface" %}
 [project.scripts]
 {{cookiecutter.project_slug}} = "{{cookiecutter.project_slug}}.cli:app"{% endif %}
 
@@ -57,13 +46,13 @@ changelog = "https://github.com/{{cookiecutter.__gh_slug}}/blob/master/changelog
 homepage = "https://github.com/{{cookiecutter.__gh_slug}}"
 
 [tool.setuptools]
-package-dir = {"" = "src"}
+package-dir = { "" = "src" }
 
 [tool.setuptools.package-data]
 "*" = ["*.*"]
 
 [tool.setuptools.dynamic]
-version = {attr = "{{cookiecutter.project_slug}}.__version__"}
+version = { attr = "{{cookiecutter.project_slug}}.__version__" }
 
 [tool.ruff]
 line-length = 88
