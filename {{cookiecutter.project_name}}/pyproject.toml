@@ -30,9 +30,7 @@ dev = [
     "coverage",
     "mypy",
     "pytest",
-    "ruff"
-    "black"
-    "requests"
+    "requests",
 ]
 docs = [
     "autodoc_pydantic",
@@ -66,3 +64,14 @@ package-dir = {"" = "src"}
 
 [tool.setuptools.dynamic]
 version = {attr = "{{cookiecutter.project_slug}}.__version__"}
+
+[tool.ruff]
+line-length = 88
+indent-width = 4
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+docstring-code-format = false
