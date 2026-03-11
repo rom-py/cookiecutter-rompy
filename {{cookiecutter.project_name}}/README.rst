@@ -39,18 +39,27 @@ Features
 Code Formatting and Pre-commit Hooks
 ------------------------------------
 
-This repository enforces Python code formatting using [black](https://github.com/psf/black) via the pre-commit framework.
+This repository enforces Python code formatting and linting using [Ruff](https://docs.astral.sh/ruff/) via the pre-commit framework.
 
 To set up pre-commit hooks locally (required for all contributors)::
 
     pip install pre-commit
     pre-commit install
 
-This will automatically check code formatting before each commit. To format your code manually, run::
+This will automatically check code formatting and linting before each commit. To format your code manually, run::
+
+    ruff format .
+
+To check formatting and linting without making changes, run::
+
+    ruff check .
+    ruff format --check .
+
+Or to run all pre-commit hooks manually::
 
     pre-commit run --all-files
 
-All code must pass black formatting before it can be committed or merged.
+All code must pass Ruff formatting and linting before it can be committed or merged.
 
 Versioning and Release
 ----------------------
