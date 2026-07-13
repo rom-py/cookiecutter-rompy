@@ -6,9 +6,10 @@ build-backend = "setuptools.build_meta"
 dependencies = [
   "rompy",
   {% if cookiecutter.command_line_interface.lower() == "typer" -%}
-  "typer"
+  "typer",
 {%- endif %}
-]name = "{{cookiecutter.project_slug}}"
+]
+name = "{{cookiecutter.project_slug}}"
 description = "{{cookiecutter.project_short_description}}"
 readme = "README.rst"
 authors = [
@@ -30,8 +31,10 @@ docs = [
     "mkdocstrings[python]",
     "pymdown-extensions",
 ]
+{% if cookiecutter.command_line_interface.lower() == "typer" -%}
 [project.scripts]
-{{cookiecutter.project_slug}} = "{{cookiecutter.project_slug}}.cli:app"{% endif %}
+{{cookiecutter.project_slug}} = "{{cookiecutter.project_slug}}.cli:app"
+{%- endif %}
 
 [project.entry-points."rompy.config"]
 {{ cookiecutter.model_name }} = "{{ cookiecutter.project_slug }}.config:Config"
